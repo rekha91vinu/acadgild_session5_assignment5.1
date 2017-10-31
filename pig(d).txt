@@ -1,0 +1,7 @@
+List of employees (employee id and employee name) having entries in employee_expenses
+file. 
+
+emp_join2 = join emp_det by id, emp_exp by id;
+emp3 = foreach emp_join2 generate $0,$1;
+distnct = distinct emp3;
+dump distnct;

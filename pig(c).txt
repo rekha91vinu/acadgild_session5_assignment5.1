@@ -1,0 +1,9 @@
+Employee (employee id and employee name) with maximum expense (In case two
+employees have same expense, employee with name coming first in dictionary should get
+preference) 
+
+emp_join1 = join emp_det by id, emp_exp by id;
+emp2_order = order emp_join1 by expenses desc, name asc;
+lim2 = limit emp2_order 1;
+emp2 = foreach lim2 generate $0,$1;
+dump emp2;

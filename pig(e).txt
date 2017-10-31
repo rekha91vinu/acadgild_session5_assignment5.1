@@ -1,0 +1,8 @@
+List of employees (employee id and employee name) having no entry in employee_expenses
+file. 
+
+emp_join3 = join emp_det by id left outer, emp_exp by id;
+emp4_fil = filter emp_join3 by $4 is null and $5 is null;
+emp4 = foreach emp4_fil generate $0,$1;
+distnct1 = distinct emp4;
+dump distnct1;
